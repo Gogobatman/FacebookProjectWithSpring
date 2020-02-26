@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:JoeProfileInfo"/>
+	 
+	<bean id="myProfileInformation"
+ 		class="spring.facebook.ProfileInformation">		
+ 		<property name="name" value="${name}"/>
+ 		<property name="surname" value="${surname}"/>	
+ 		<property name="birthDate" value="${birthDate}"/>
+ 		<property name="joinDate" value="${joinDate}"/>	
+ 		<property name="relationshipStatus" value="${relationshipStatus}"/>
+ 		<property name="location" value="${location}"/>	
+ 		<property name="mutualFriends" value="${mutualFriends}"/>	
+ 	</bean>
+ 	
+	<bean id="programmersProfile"
+ 		class="spring.facebook.Profile">	
+ 		<property name="profileInformation" ref="myProfileInformation"/> 	
+ 	</bean>
+
+
+</beans>
+
+
+
+
